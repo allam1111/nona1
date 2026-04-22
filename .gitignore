@@ -1,0 +1,22 @@
+# Android
+build/
+.gradle/
+local.properties
+*.apk
+*.aar
+*.jks
+
+# IDE
+.idea/
+*.iml
+
+# Node
+node_modules/
+package-lock.json
+
+# Firebase
+.firebase/
+
+# OS
+.DS_Store
+Thumbs.db

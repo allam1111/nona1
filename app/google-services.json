@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "52078325473",
+    "project_id": "allam-9304d",
+    "storage_bucket": "allam-9304d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52078325473:android:67120e678c9aeb9f0d11a0",
+        "android_client_info": {
+          "package_name": "com.allam.ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbc4Jx216Q4nwhhv4D6ZSkYYE_SaSXtlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
