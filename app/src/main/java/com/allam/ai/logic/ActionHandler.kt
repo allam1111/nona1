@@ -53,14 +53,11 @@ class ActionHandler(private val context: Context) {
 
     private fun playMusic() {
         try {
-            val intent = Intent(android.provider.MediaStore.INTENT_ACTION_MUSIC_PLAYER)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            context.startActivity(intent)
-        } catch (e: Exception) {
-            // Fallback for newer Android versions
             val intent = Intent.makeMainSelectorActivity(Intent.ACTION_MAIN, Intent.CATEGORY_APP_MUSIC)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
+        } catch (e: Exception) {
+            Log.e("ActionHandler", "Failed to open music player: ${e.message}")
         }
     }
 
