@@ -4,6 +4,7 @@
     --primary: #00f2fe;
     --secondary: #7000ff;
     --bg: #0a0b1e;
+    --card-bg: rgba(255, 255, 255, 0.03);
 }
 
 * {
@@ -16,14 +17,11 @@ body {
     font-family: 'Cairo', sans-serif;
     background: var(--bg);
     color: white;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Animated Background */
+/* Background Effects */
 .bg-gradient {
     position: fixed;
     top: 0;
@@ -35,75 +33,109 @@ body {
 }
 
 .blob {
-    position: absolute;
-    width: 500px;
-    height: 500px;
+    position: fixed;
+    width: 600px;
+    height: 600px;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
-    filter: blur(80px);
+    filter: blur(100px);
     border-radius: 50%;
-    opacity: 0.2;
+    opacity: 0.15;
+    z-index: -1;
     animation: move 20s infinite alternate;
 }
 
 @keyframes move {
-    from { transform: translate(-20%, -20%); }
-    to { transform: translate(20%, 20%); }
+    from { transform: translate(-30%, -30%); }
+    to { transform: translate(30%, 30%); }
 }
 
-/* Card Styling */
-.container {
-    background: rgba(255, 255, 255, 0.03);
+/* Header/Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hero-card {
+    background: var(--card-bg);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 3rem;
-    border-radius: 30px;
+    padding: 4rem;
+    border-radius: 40px;
     text-align: center;
-    max-width: 500px;
+    max-width: 600px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease-out;
-    position: relative;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.logo-container {
-    margin-bottom: 2rem;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 900;
     background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-p.tagline {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.7);
+.tagline {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 2rem;
 }
 
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 2.5rem;
+/* Features Section */
+.section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.feature-tag {
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    text-align: right;
+}
+
+.feature-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.05);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Button Styling */
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button & Animations */
 .download-btn {
     display: inline-flex;
     align-items: center;
@@ -111,49 +143,21 @@ p.tagline {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     color: white;
     text-decoration: none;
-    padding: 1.2rem 2.5rem;
+    padding: 1.2rem 3rem;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1.1rem;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1.2rem;
+    transition: 0.3s;
     box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
-    position: relative;
-    overflow: hidden;
 }
 
 .download-btn:hover {
-    transform: scale(1.05) translateY(-5px);
+    transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(112, 0, 255, 0.4);
 }
 
-.download-btn::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(45deg);
-    transition: 0.5s;
-    opacity: 0;
-}
-
-.download-btn:hover::after {
-    left: 120%;
-    opacity: 1;
-}
-
-.footer-info {
-    margin-top: 2rem;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.4);
-}
-
-/* Voice Wave Animation */
 .wave-container {
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 5px;
     height: 40px;
@@ -161,7 +165,7 @@ p.tagline {
 }
 
 .wave-bar {
-    width: 4px;
+    width: 5px;
     background: var(--primary);
     border-radius: 10px;
     animation: wave 1s infinite ease-in-out;
@@ -169,10 +173,13 @@ p.tagline {
 
 @keyframes wave {
     0%, 100% { height: 10px; }
-    50% { height: 35px; }
+    50% { height: 40px; }
 }
 
-.wave-bar:nth-child(2) { animation-delay: 0.1s; }
-.wave-bar:nth-child(3) { animation-delay: 0.2s; }
-.wave-bar:nth-child(4) { animation-delay: 0.3s; }
-.wave-bar:nth-child(5) { animation-delay: 0.4s; }
+.wave-bar:nth-child(even) { background: var(--secondary); animation-delay: 0.2s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .hero-card { padding: 2rem; }
+}
