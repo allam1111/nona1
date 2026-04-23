@@ -3,41 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تحميل تطبيق علام AI - Allam Voice Assistant</title>
-    <meta name="description" content="حمل الآن تطبيق علام، المساعد الشخصي الصوتي المطور بالذكاء الاصطناعي.">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <title>علام AI | المساعد الصوتي المصري</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <div class="bg-gradient"></div>
+    <div class="blob"></div>
+    
     <div class="container">
-        <div class="logo">علام AI</div>
-        <h1>مساعدك الشخصي الصوتي المطور</h1>
-        <p class="description">
-            اختبر تجربة فريدة مع تطبيق علام، أول مساعد صوتي مصري يفهمك ويتحدث معك بذكاء فائق. حمله الآن وابدأ المحادثة!
-        </p>
+        <div class="logo-container">
+            <h1>علام AI</h1>
+            <p class="tagline">مساعدك الشخصي المتطور.. بيفهمك من غير كلام</p>
+        </div>
 
-        <!-- رابط التحميل من GitHub Releases -->
-        <a href="https://github.com/allam1111/youssef/releases/download/v1.0/app-debug.apk" class="download-btn" id="downloadLink">
-            <svg class="icon" viewBox="0 0 24 24">
-                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-            </svg>
-            تنزيل تطبيق APK
+        <div class="wave-container">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+        </div>
+
+        <div class="features">
+            <span class="feature-tag">ذكاء اصطناعي</span>
+            <span class="feature-tag">لهجة مصرية</span>
+            <span class="feature-tag">تحكم صوتي</span>
+        </div>
+
+        <a href="https://github.com/allam1111/youssef/releases/download/v1.0.0/app-debug.apk" class="download-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            تحميل التطبيق الآن (APK)
         </a>
 
-        <div class="footer">
-            الإصدار الحالي: v1.0.0 | آمن وموثوق 100%
+        <div class="footer-info">
+            الإصدار 1.0.0 | آمن وموثوق 100%
         </div>
     </div>
 
     <script>
-        // ميكرو-أنيميشن بسيط عند الضغط
-        const btn = document.getElementById('downloadLink');
-        btn.addEventListener('click', () => {
-            btn.style.transform = 'scale(0.95)';
-            setTimeout(() => btn.style.transform = '', 150);
+        // Subtle mouse tracking effect
+        document.addEventListener('mousemove', (e) => {
+            const container = document.querySelector('.container');
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            container.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
         });
     </script>
 </body>
