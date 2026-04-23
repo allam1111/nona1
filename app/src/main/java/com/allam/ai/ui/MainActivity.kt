@@ -129,7 +129,7 @@ class MainActivity : ComponentActivity() {
         onStopSpeech: () -> Unit
     ) {
         var isListening by remember { mutableStateOf(false) }
-        var currentRms by remember { mutableFloatOf(0f) }
+        var currentRms by remember { mutableStateOf(0f) }
         
         val messages = remember { messagesState }
 
