@@ -151,7 +151,7 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier.padding(top = 16.dp)
             )
             
-            Divider(color = CyanNeon.copy(alpha = 0.3f), thickness = 1.dp, modifier = Modifier.padding(vertical = 16.dp))
+            HorizontalDivider(color = CyanNeon.copy(alpha = 0.3f), thickness = 1.dp, modifier = Modifier.padding(vertical = 16.dp))
 
             // Chat History
             LazyColumn(
